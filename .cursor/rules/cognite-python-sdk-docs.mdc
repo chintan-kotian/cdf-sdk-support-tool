@@ -1,0 +1,15 @@
+---
+description: Use official Cognite Python SDK docs for API behavior and examples
+alwaysApply: true
+---
+
+# Cognite Python SDK reference
+
+For **anything related to the Cognite Python SDK** (APIs, clients, data classes, configuration, async/sync usage, filters, exceptions, migration, optional extras):
+
+1. **Treat the official documentation as the source of truth**, not memory or guesswork.
+2. **Prefer linking or aligning with** the hosted docs: [Cognite Python SDK documentation](https://cognite-sdk-python.readthedocs-hosted.com/en/latest/).
+3. When suggesting code, match **current SDK patterns** from that site (e.g. `CogniteClient` / `AsyncCogniteClient`, credential providers, v8 async and client configuration).
+4. If the workspace code disagrees with the docs, **call out the discrepancy** and default to documented behavior unless the user is explicitly maintaining legacy behavior.
+
+Do not invent SDK APIs or method names without checking the docs or the installed package in this repo.

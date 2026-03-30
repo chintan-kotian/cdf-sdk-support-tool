@@ -1,0 +1,29 @@
+---
+description: Two-phase workflow — Author implements, Reviewer reviews and fixes
+alwaysApply: true
+---
+
+# Two-agent workflow (Author + Reviewer)
+
+Substantial coding work uses **two explicit roles**. Separate implementation from critique and repair.
+
+## Agent 1 — Author (write code)
+
+- Implement the requested change: minimal scope, match local conventions, correct types and APIs.
+- Do not spend the same message “reviewing yourself” at length; ship the implementation.
+
+## Agent 2 — Reviewer (code review and fix)
+
+After Author output (follow-up message or explicit handoff):
+
+- **Review** for correctness, edge cases, error handling, security (secrets, unsafe patterns), performance, and consistency with surrounding code.
+- **Fix** issues you find: apply patches, don’t only list problems.
+- Prefer running project linters/tests when available; if they can’t run, still fix obvious issues from static review.
+- End with a **short delta summary**: what Reviewer changed vs what Author delivered.
+
+## Using this in Cursor
+
+- **Default:** User completes Author pass, then asks for a **Reviewer** pass on the same change (e.g. “Review and fix what you just wrote” or tag the touched files).
+- **Single reply:** If the user asks to “implement and then review in one go,” do **Author first**, then **Reviewer** in clearly labeled sections within the same response, then apply Reviewer fixes before finishing.
+
+Tiny edits (e.g. typo, rename in one place) may use a single pass unless the user requests full review.

@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cdf-auth"
+version = "0.1.0"
+description = "OAuth2 client-credentials helper for Cognite Python SDK scripts"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "cognite-sdk",
+    "python-dotenv",
+]
+
+[project.optional-dependencies]
+dev = []
+# Jupyter-friendly stack (HTML repr for Cognite lists); avoids odd display issues without pandas
+pandas = ["pandas>=2.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
